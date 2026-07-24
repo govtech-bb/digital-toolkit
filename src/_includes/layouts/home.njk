@@ -19,8 +19,27 @@ tagLabels:
 <main class="main-content">
   <div class="container">
 
+    <nav class="home-toc" aria-label="Contents">
+      <h2 class="home-toc__heading">Contents</h2>
+      <ol class="home-toc__list">
+        {% for section in sections %}
+        <li>
+          <a href="#{{ section.heading | slug }}">{{ section.heading }}</a>
+          <ul>
+            {% for item in section.items %}
+              {% set entry = collections.all | pageByPath(item.page) %}
+              {% set itemTitle = entry.data.title if entry else item.title %}
+              {% set itemHref  = entry.url        if entry else item.href %}
+            <li><a href="{{ itemHref }}">{{ itemTitle }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+      </ol>
+    </nav>
+
     {% for section in sections %}
-    <section class="toolkit-section">
+    <section class="toolkit-section" id="{{ section.heading | slug }}">
       <h2 class="toolkit-section__heading">{{ section.heading }}</h2>
       <p class="toolkit-section__desc">{{ section.desc }}</p>
       <ul class="resource-list">

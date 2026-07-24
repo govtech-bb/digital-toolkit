@@ -37,6 +37,14 @@ module.exports = function (eleventyConfig) {
     return collection.find((p) => p.inputPath.endsWith(suffix));
   });
 
+  eleventyConfig.addFilter("slug", function (s) {
+    return String(s)
+      .trim()
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-");
+  });
+
   const md = markdownIt({
     html: true,
     linkify: false,
