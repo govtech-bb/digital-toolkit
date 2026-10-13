@@ -108,7 +108,7 @@ This is where you set clear expectations about how the supplier will work. All s
 
 > **Template language:**
 >
-> *All deliverables must meet WCAG 2.1 AA as a minimum. The supplier must conduct accessibility testing with assistive technologies and include users with access needs in research activities. Accessibility is not a final check – it must be built in from the start.*
+> *All deliverables must meet the version and level of the Web Content Accessibility Guidelines (WCAG) that applies on the date this contract is signed, as listed in the version history on the [Design System accessibility page](https://design-system.service.alpha.gov.bb/documentation/accessibility/). The supplier must conduct accessibility testing with assistive technologies and include users with access needs in research activities. Accessibility is not a final check – it must be built in from the start.*
 
 ### 4. Team and ways of working
 
